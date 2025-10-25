@@ -48,7 +48,7 @@ describe('Sistema de Gestión de Parqueadero', () => {
 
         it('F2-02: Debe calcular el pago exacto y remover el vehículo (2.5 horas).', () => {
             parqueadero.entry(PLATE);
-            // Simular 2 horas y 16 minutos (2.26 horas) -> Debe redondear a 2.5 horas
+            // Simular 2 horas y 16 minutos -> Debe redondear a 2.5 horas
             const exitTime = parqueadero.parkedVehicles[PLATE].entryTime + (MS_IN_HOUR * 2) + (16 * 60 * 1000);
 
             const result = parqueadero.exit(PLATE, exitTime);
